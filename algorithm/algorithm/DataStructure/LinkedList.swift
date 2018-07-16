@@ -63,6 +63,23 @@ class LinkedList<T>: CustomStringConvertible {
         return node?.value
     }
     
+    func remove(at index: Int) {
+        if index > 1 {
+            var currentNode = head
+            var currentIndex = 1
+            while(currentNode?.next != nil) {
+                if currentIndex == index - 1 {
+                    currentNode?.next = currentNode?.next?.next
+                    break
+                }
+                currentIndex += 1
+                currentNode = currentNode?.next
+            }
+        } else if index == 1 {
+            self.head = head?.next
+        }
+    }
+    
     public var description: String {
         var text = "["
         var node = head

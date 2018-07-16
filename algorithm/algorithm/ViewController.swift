@@ -83,8 +83,11 @@ class ViewController: UIViewController {
         if let thirdCat = catBreeds.value(at: 3) {
             print("the 3rd cat: \(thirdCat)")
         }
+        catBreeds.remove(at: 3)
+        print("catBreeds after remove at index 3: \(catBreeds)")
         
-        
+        catBreeds.remove(at: 1)
+        print("catBreeds after remove at index 1: \(catBreeds)")
     }
 }
 
