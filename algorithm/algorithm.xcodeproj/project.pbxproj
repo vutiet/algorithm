@@ -17,6 +17,8 @@
 		B9951B6B20FC450D002C3BA5 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9951B6A20FC450D002C3BA5 /* Stack.swift */; };
 		B9951B7120FC4592002C3BA5 /* SortImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9951B6E20FC4592002C3BA5 /* SortImplementation.swift */; };
 		B9951B7220FC4592002C3BA5 /* SearchImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9951B7020FC4592002C3BA5 /* SearchImplementation.swift */; };
+		B9951B7420FC46A0002C3BA5 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9951B7320FC46A0002C3BA5 /* Queue.swift */; };
+		B9951B7620FC4A06002C3BA5 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9951B7520FC4A06002C3BA5 /* LinkedList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		B9951B6A20FC450D002C3BA5 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		B9951B6E20FC4592002C3BA5 /* SortImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortImplementation.swift; sourceTree = "<group>"; };
 		B9951B7020FC4592002C3BA5 /* SearchImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchImplementation.swift; sourceTree = "<group>"; };
+		B9951B7320FC46A0002C3BA5 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		B9951B7520FC4A06002C3BA5 /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,8 @@
 			isa = PBXGroup;
 			children = (
 				B9951B6A20FC450D002C3BA5 /* Stack.swift */,
+				B9951B7320FC46A0002C3BA5 /* Queue.swift */,
+				B9951B7520FC4A06002C3BA5 /* LinkedList.swift */,
 			);
 			path = DataStructure;
 			sourceTree = "<group>";
@@ -290,10 +296,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9951B3E20FC448C002C3BA5 /* ViewController.swift in Sources */,
+				B9951B7420FC46A0002C3BA5 /* Queue.swift in Sources */,
 				B9951B7120FC4592002C3BA5 /* SortImplementation.swift in Sources */,
 				B9951B6B20FC450D002C3BA5 /* Stack.swift in Sources */,
 				B9951B7220FC4592002C3BA5 /* SearchImplementation.swift in Sources */,
 				B9951B3C20FC448C002C3BA5 /* AppDelegate.swift in Sources */,
+				B9951B7620FC4A06002C3BA5 /* LinkedList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
