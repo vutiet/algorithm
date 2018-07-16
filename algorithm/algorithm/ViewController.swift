@@ -23,7 +23,8 @@ class ViewController: UIViewController {
     @IBAction func onButtonTap(_ sender: Any) {
 //        playWithStack()
 //        playWithQueue()
-        playWithLinkedList()
+//        playWithLinkedList()
+        playWithBinarySearchTree()
     }
     
     
@@ -88,6 +89,44 @@ class ViewController: UIViewController {
         
         catBreeds.remove(at: 1)
         print("catBreeds after remove at index 1: \(catBreeds)")
+    }
+    
+    func playWithBinarySearchTree() {
+        let tree1 = BinarySearchTree<Int>(value: 7)
+        tree1.insert(value: 2)
+        tree1.insert(value: 5)
+        tree1.insert(value: 10)
+        tree1.insert(value: 9)
+        tree1.insert(value: 1)
+        print("tree1: \(tree1)")
+        
+        let tree2 = BinarySearchTree<Int>(array: [7, 2, 5, 10, 9, 1])
+        print("tree2: \(tree2)")
+        
+        print("tree1 height: \(tree1.height())")
+        if let searchResult = tree1.search(value: 2) {
+            print("searchResult: \(searchResult)")
+            print("searchResult height: \(searchResult.height())")
+            print("searchResult depth: \(searchResult.depth())")
+            let afterRemovedTree = searchResult.remove()
+            print("searchResult after remove: \(afterRemovedTree)")
+            print("tree1 after remove: \(tree1)")
+        }
+        
+        if let searchTree = tree1.search(value: 1) {
+            searchTree.insert(value: 110)
+            print("searchTree: \(searchTree)")
+            print("tree1: \(tree1)")
+            if tree1.isValidBST(minValue: Int.min, maxValue: Int.max) {
+                print("YESSSSS it's valid")
+            } else {
+                print("NO, I SCREWED IT UP!!!!")
+            }
+        }
+        
+//        if tree1.isValidBST(minValue: Int.min, maxValue: Int.max) {
+//            print("YESSSSS it's valid")
+//        }
     }
 }
 
