@@ -159,6 +159,39 @@ class ViewController: UIViewController {
         adjacencyList.add(from: austinTexas, to: sanFrancisco,  edgeType: .undirected, weight: 297)
         
         print(adjacencyList.description)
+        
+        print("============================")
+        print("\nBreadth First Search")
+        let traverse = adjacencyList.breadthFirstSearchTraverse(from: singapore, to: seattle)
+        print(traverse)
+        let traverse2 = adjacencyList.breadthFirstSearchTraverse(from: tokyo, to: sanFrancisco)
+        print(traverse2)
+        
+        
+        let graph = AdjacencyList<String>()
+        
+        let nodeA = graph.createVertex(data: "a")
+        let nodeB = graph.createVertex(data: "b")
+        let nodeC = graph.createVertex(data: "c")
+        let nodeD = graph.createVertex(data: "d")
+        let nodeE = graph.createVertex(data: "e")
+        let nodeF = graph.createVertex(data: "f")
+        let nodeG = graph.createVertex(data: "g")
+        let nodeH = graph.createVertex(data: "h")
+        
+        graph.add(from: nodeA, to: nodeB, edgeType: .directed, weight: nil)
+        graph.add(from: nodeA, to: nodeC, edgeType: .directed, weight: nil)
+        graph.add(from: nodeB, to: nodeD, edgeType: .directed, weight: nil)
+        graph.add(from: nodeB, to: nodeE, edgeType: .directed, weight: nil)
+        graph.add(from: nodeC, to: nodeF, edgeType: .directed, weight: nil)
+        graph.add(from: nodeC, to: nodeG, edgeType: .directed, weight: nil)
+        graph.add(from: nodeE, to: nodeH, edgeType: .directed, weight: nil)
+        graph.add(from: nodeE, to: nodeF, edgeType: .directed, weight: nil)
+        graph.add(from: nodeF, to: nodeG, edgeType: .directed, weight: nil)
+        
+        let nodesExplored = graph.breadthFirstSearchTraverse(from: nodeA, to: nodeH)
+        print(nodesExplored)
+        
     }
 }
 

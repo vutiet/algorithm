@@ -16,4 +16,5 @@ protocol Graphable {
     func add(from source: Vertex<Element>, to destination: Vertex<Element>, edgeType: EdgeType, weight: Double?)
     func weight(from source: Vertex<Element>, to destination: Vertex<Element>) -> Double?
     func edges(from source: Vertex<Element>) -> [Edge<Element>]?
+    func breadthFirstSearchTraverse(from source: Vertex<Element>, to destination: Vertex<Element>) -> [Vertex<Element>]
 }

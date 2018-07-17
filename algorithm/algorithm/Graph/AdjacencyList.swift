@@ -57,6 +57,28 @@ extension AdjacencyList: Graphable {
         return nil
     }
     
+    func breadthFirstSearchTraverse(from source: Vertex<T>, to destination: Vertex<T>) -> [Vertex<T>] {
+//        var results = [Vertex<T>]()
+        var visits = [Vertex<T>]()
+        var queue: Queue<Vertex<T>> = Queue<Vertex<T>>()
+        queue.enqueue(source)
+//        results.append(source)
+        visits.append(source)
+        
+        while let visitedVertext = queue.dequeue() {
+            if let neighborEdges = self.edges(from: visitedVertext) {
+                for edge in neighborEdges {
+                    if visits.contains(edge.destination) == false {
+                        queue.enqueue(edge.destination)
+                        visits.append(edge.destination)
+                    }
+                }
+            }
+        }
+        
+        return visits
+    }
+    
     var description: CustomStringConvertible {
         var resultString = ""
         for (vertex, edges) in list {
