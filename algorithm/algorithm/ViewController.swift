@@ -167,7 +167,7 @@ class ViewController: UIViewController {
         let traverse2 = adjacencyList.breadthFirstSearchTraverse(from: tokyo, to: sanFrancisco)
         print(traverse2)
         
-        let shortestPaths = adjacencyList.breadthFirstSearchShortest(from: austinTexas, to: tokyo)
+        let shortestPaths = adjacencyList.breadthFirstSearchShortest(from: seattle, to: detroit)
         print(shortestPaths)
         
         
@@ -198,6 +198,11 @@ class ViewController: UIViewController {
         print("\nDepth First Search")
         let nodesExplored = graph.depthFirstSearchTraverse(from: nodeA)
         print(nodesExplored)
+        
+        let flightsExplored = adjacencyList.depthFirstSearchTraverse(from: seattle)
+        print(flightsExplored)
+        let paths = adjacencyList.depthFirstSearchPaths(from: seattle, to: detroit)
+        print(paths)
         
         
     }

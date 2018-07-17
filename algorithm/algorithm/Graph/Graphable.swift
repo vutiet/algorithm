@@ -21,4 +21,5 @@ protocol Graphable {
     func breadthFirstSearchShortest(from source: Vertex<Element>, to destination: Vertex<Element>) -> [Vertex<Element>]
     
     func depthFirstSearchTraverse(from vertex: Vertex<Element>) -> [Vertex<Element>]
+    func depthFirstSearchPaths(from vertex: Vertex<Element>, to destination: Vertex<Element>) -> [Vertex<Element>]
 }

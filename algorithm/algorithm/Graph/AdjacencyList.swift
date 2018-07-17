@@ -114,7 +114,6 @@ extension AdjacencyList: Graphable {
         return [Vertex<T>]()
     }
     
-    
     func depthFirstSearchTraverse(from vertex: Vertex<Element>) -> [Vertex<Element>] {
         var visits = [Vertex<Element>]()
         visits.append(vertex)
@@ -130,6 +129,42 @@ extension AdjacencyList: Graphable {
         }
         print("return visits: \(visits)")
         return visits
+    }
+    
+    func depthFirstSearchPaths(from source: Vertex<T>, to destination: Vertex<T>) -> [Vertex<T>] {
+        var stack = Stack<Vertex<T>>()
+        var visits = Set<Vertex<T>>()
+        // first vertex
+        stack.push(source)
+        visits.insert(source)
+        
+        outer: while let vertex = stack.peek(), vertex != destination { // last vertex in stack and not destination
+            print("check vertex: \(vertex)")
+            if let neighborEdges = edges(from: vertex), neighborEdges.count > 0 { // there are edges from current vertex
+                for edge in neighborEdges {
+                    print("visits: \(visits) || edge.destination: \(edge.destination)")
+                    if visits.contains(edge.destination) == false { // haven't check this vertex
+                        stack.push(edge.destination)
+                        visits.insert(edge.destination)
+                        print("stack after push: \(stack)")
+                        continue outer
+                    }
+                }
+                
+                print("all edges were visited, backtrack from \(vertex)")
+                stack.pop() // all edges of current vertex have been visited, so remove it from stack
+            } else { // vertex is at dead end, need to backtrack
+                print("dead end vertex, backtrack from \(vertex)")
+                stack.pop()
+            }
+        }
+        
+        print("final stack: \(stack)")
+        var results = [Vertex<T>]()
+        while stack.count() > 0 {
+            results.insert(stack.pop(), at: 0)
+        }
+        return results
     }
     
     var description: CustomStringConvertible {

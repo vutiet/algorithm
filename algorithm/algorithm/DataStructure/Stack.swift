@@ -16,7 +16,7 @@ struct Stack<T>: CustomStringConvertible {
         data.append(element)
     }
     
-    mutating func pop() -> T {
+    @discardableResult mutating func pop() -> T {
         return data.removeLast()
     }
     
