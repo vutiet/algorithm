@@ -186,6 +186,24 @@ class BinarySearchTree<T: Comparable>: CustomStringConvertible {
         }
     }
     
+    func traverseLNR(process: (T) -> Void) {
+        left?.traverseLNR(process: process)
+        process(value)
+        right?.traverseLNR(process: process)
+    }
+    
+    func traverseLRN(process: (T) -> Void) {
+        left?.traverseLRN(process: process)
+        right?.traverseLRN(process: process)
+        process(value)
+    }
+    
+    func traverseNLR(process: (T) -> Void) {
+        process(value)
+        left?.traverseNLR(process: process)
+        right?.traverseNLR(process: process)
+    }
+    
     public var description: String {
         var s = ""
         if let left = left {

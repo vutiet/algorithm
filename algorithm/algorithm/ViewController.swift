@@ -99,6 +99,9 @@ class ViewController: UIViewController {
         tree1.insert(value: 9)
         tree1.insert(value: 1)
         print("tree1: \(tree1)")
+        tree1.traverseLNR(process: { print($0) })
+        tree1.traverseLRN(process: { print($0) })
+        tree1.traverseNLR(process: { print($0) })
         
         let tree2 = BinarySearchTree<Int>(array: [7, 2, 5, 10, 9, 1])
         print("tree2: \(tree2)")
