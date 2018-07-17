@@ -58,11 +58,9 @@ extension AdjacencyList: Graphable {
     }
     
     func breadthFirstSearchTraverse(from source: Vertex<T>, to destination: Vertex<T>) -> [Vertex<T>] {
-//        var results = [Vertex<T>]()
         var visits = [Vertex<T>]()
         var queue: Queue<Vertex<T>> = Queue<Vertex<T>>()
         queue.enqueue(source)
-//        results.append(source)
         visits.append(source)
         
         while let visitedVertext = queue.dequeue() {
@@ -75,8 +73,42 @@ extension AdjacencyList: Graphable {
                 }
             }
         }
-        
         return visits
+    }
+    
+    func breadthFirstSearchShortest(from source: Vertex<T>, to destination: Vertex<T>) -> [Vertex<T>] {
+        var visits = [Vertex<T>:Edge<T>]()
+        var queue: Queue<Vertex<T>> = Queue<Vertex<T>>()
+        queue.enqueue(source)
+        
+        while let visitedVertext = queue.dequeue() {
+            // found !!!
+            if visitedVertext == destination {
+                var results = [Vertex<T>]()
+                var vertex = destination
+                while let edge = visits[vertex] { // iterate visits from the destination
+                    results = [edge.destination] + results
+                    vertex = edge.source // next vertex
+                    if vertex == source { // we reach source here, should add it to the result then break out
+                        results = [vertex] + results
+                        break
+                    }
+                }
+                return results
+            }
+            
+            // search next vertex
+            if let neighborEdges = self.edges(from: visitedVertext) {
+                for edge in neighborEdges {
+                    if visits[edge.destination] == nil {
+                        queue.enqueue(edge.destination)
+                        visits[edge.destination] = edge // we replace value at edge.destination vertex with current edge
+                    }
+                }
+            }
+        }
+        
+        return [Vertex<T>]()
     }
     
     var description: CustomStringConvertible {

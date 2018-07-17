@@ -167,7 +167,11 @@ class ViewController: UIViewController {
         let traverse2 = adjacencyList.breadthFirstSearchTraverse(from: tokyo, to: sanFrancisco)
         print(traverse2)
         
+        let shortestPaths = adjacencyList.breadthFirstSearchShortest(from: austinTexas, to: tokyo)
+        print(shortestPaths)
         
+        
+        print("============================")
         let graph = AdjacencyList<String>()
         
         let nodeA = graph.createVertex(data: "a")
