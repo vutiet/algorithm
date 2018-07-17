@@ -24,7 +24,8 @@ class ViewController: UIViewController {
 //        playWithStack()
 //        playWithQueue()
 //        playWithLinkedList()
-        playWithBinarySearchTree()
+//        playWithBinarySearchTree()
+        playWithGraph()
     }
     
     
@@ -130,6 +131,34 @@ class ViewController: UIViewController {
 //        if tree1.isValidBST(minValue: Int.min, maxValue: Int.max) {
 //            print("YESSSSS it's valid")
 //        }
+    }
+    
+    func playWithGraph() {
+        let adjacencyList = AdjacencyList<String>()
+        
+        let singapore = adjacencyList.createVertex(data: "Singapore")
+        let tokyo = adjacencyList.createVertex(data: "Tokyo")
+        let hongKong = adjacencyList.createVertex(data: "Hong Kong")
+        let detroit = adjacencyList.createVertex(data: "Detroit")
+        let sanFrancisco = adjacencyList.createVertex(data: "San Francisco")
+        let washingtonDC = adjacencyList.createVertex(data: "Washington DC")
+        let austinTexas = adjacencyList.createVertex(data: "Austin Texas")
+        let seattle = adjacencyList.createVertex(data: "Seattle")
+    
+        adjacencyList.add(from: singapore, to: hongKong, edgeType: .undirected, weight: 300)
+        adjacencyList.add(from: singapore, to: tokyo, edgeType: .undirected, weight: 500)
+        adjacencyList.add(from: hongKong, to: tokyo, edgeType: .undirected, weight: 250)
+        adjacencyList.add(from: tokyo, to: detroit,  edgeType: .undirected, weight: 450)
+        adjacencyList.add(from: tokyo, to: washingtonDC,  edgeType: .undirected, weight: 300)
+        adjacencyList.add(from: hongKong, to: sanFrancisco,  edgeType: .undirected, weight: 600)
+        adjacencyList.add(from: detroit, to: austinTexas,  edgeType: .undirected, weight: 50)
+        adjacencyList.add(from: austinTexas, to: washingtonDC,  edgeType: .undirected, weight: 292)
+        adjacencyList.add(from: sanFrancisco, to: washingtonDC,  edgeType: .undirected, weight: 337)
+        adjacencyList.add(from: washingtonDC, to: seattle,  edgeType: .undirected, weight: 277)
+        adjacencyList.add(from: sanFrancisco, to: seattle, edgeType: .undirected, weight: 218)
+        adjacencyList.add(from: austinTexas, to: sanFrancisco,  edgeType: .undirected, weight: 297)
+        
+        print(adjacencyList.description)
     }
 }
 
