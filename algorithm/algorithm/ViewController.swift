@@ -171,7 +171,7 @@ class ViewController: UIViewController {
         print(shortestPaths)
         
         
-        print("============================")
+        print("============================\n")
         let graph = AdjacencyList<String>()
         
         let nodeA = graph.createVertex(data: "a")
@@ -192,9 +192,13 @@ class ViewController: UIViewController {
         graph.add(from: nodeE, to: nodeH, edgeType: .directed, weight: nil)
         graph.add(from: nodeE, to: nodeF, edgeType: .directed, weight: nil)
         graph.add(from: nodeF, to: nodeG, edgeType: .directed, weight: nil)
-        
-        let nodesExplored = graph.breadthFirstSearchTraverse(from: nodeA, to: nodeH)
+       
+        print(graph.description)
+        print("============================")
+        print("\nDepth First Search")
+        let nodesExplored = graph.depthFirstSearchTraverse(from: nodeA)
         print(nodesExplored)
+        
         
     }
 }

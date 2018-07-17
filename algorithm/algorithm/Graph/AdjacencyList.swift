@@ -10,7 +10,10 @@ import Foundation
 
 class AdjacencyList<T: Hashable> {
     var list: [Vertex<T> : [Edge<T>]] = [:]
-    init() {}
+    private var globalVisits = Set<Vertex<T>>()
+    init() {
+        globalVisits = Set<Vertex<T>>()
+    }
     
     private func addDirectedEdge(from source: Vertex<T>, to destination: Vertex<T>, weight: Double?) {
         let edge = Edge(source: source, destination: destination, weight: weight)
@@ -109,6 +112,24 @@ extension AdjacencyList: Graphable {
         }
         
         return [Vertex<T>]()
+    }
+    
+    
+    func depthFirstSearchTraverse(from vertex: Vertex<Element>) -> [Vertex<Element>] {
+        var visits = [Vertex<Element>]()
+        visits.append(vertex)
+        globalVisits.insert(vertex)
+        
+        if let neighborEdges = edges(from: vertex) {
+            for edge in neighborEdges {
+                print("global visits: \(globalVisits) || \(edge.destination)")
+                if globalVisits.contains(edge.destination) == false {
+                    visits += depthFirstSearchTraverse(from: edge.destination)
+                }
+            }
+        }
+        print("return visits: \(visits)")
+        return visits
     }
     
     var description: CustomStringConvertible {
