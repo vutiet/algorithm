@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B95EA6822172000A0001C053 /* MaximumSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95EA6812172000A0001C053 /* MaximumSlice.swift */; };
 		B9951B3C20FC448C002C3BA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9951B3B20FC448C002C3BA5 /* AppDelegate.swift */; };
 		B9951B3E20FC448C002C3BA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9951B3D20FC448C002C3BA5 /* ViewController.swift */; };
 		B9951B4120FC448C002C3BA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9951B3F20FC448C002C3BA5 /* Main.storyboard */; };
@@ -19,6 +20,10 @@
 		B9951B7220FC4592002C3BA5 /* SearchImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9951B7020FC4592002C3BA5 /* SearchImplementation.swift */; };
 		B9951B7420FC46A0002C3BA5 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9951B7320FC46A0002C3BA5 /* Queue.swift */; };
 		B9951B7620FC4A06002C3BA5 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9951B7520FC4A06002C3BA5 /* LinkedList.swift */; };
+		B99C03A52173081200F543D1 /* PrimeCompositeNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C03A42173081200F543D1 /* PrimeCompositeNumber.swift */; };
+		B99C03A82173201200F543D1 /* Sieve.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C03A72173201200F543D1 /* Sieve.swift */; };
+		B99C03AB2173265A00F543D1 /* Euclidean.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C03AA2173265A00F543D1 /* Euclidean.swift */; };
+		B99C03AE2173308D00F543D1 /* FibonacciNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C03AD2173308D00F543D1 /* FibonacciNumber.swift */; };
 		B9E492ED20FC675F00F58C0F /* BinarySearchTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E492EC20FC675F00F58C0F /* BinarySearchTree.swift */; };
 		B9E4930920FD8FAF00F58C0F /* Vertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E4930820FD8FAF00F58C0F /* Vertex.swift */; };
 		B9E4930B20FD906E00F58C0F /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E4930A20FD906E00F58C0F /* Edge.swift */; };
@@ -44,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B95EA6812172000A0001C053 /* MaximumSlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaximumSlice.swift; sourceTree = "<group>"; };
 		B9951B3820FC448C002C3BA5 /* algorithm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = algorithm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9951B3B20FC448C002C3BA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9951B3D20FC448C002C3BA5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +68,10 @@
 		B9951B7020FC4592002C3BA5 /* SearchImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchImplementation.swift; sourceTree = "<group>"; };
 		B9951B7320FC46A0002C3BA5 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		B9951B7520FC4A06002C3BA5 /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
+		B99C03A42173081200F543D1 /* PrimeCompositeNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeCompositeNumber.swift; sourceTree = "<group>"; };
+		B99C03A72173201200F543D1 /* Sieve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sieve.swift; sourceTree = "<group>"; };
+		B99C03AA2173265A00F543D1 /* Euclidean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Euclidean.swift; sourceTree = "<group>"; };
+		B99C03AD2173308D00F543D1 /* FibonacciNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FibonacciNumber.swift; sourceTree = "<group>"; };
 		B9E492EC20FC675F00F58C0F /* BinarySearchTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearchTree.swift; sourceTree = "<group>"; };
 		B9E4930820FD8FAF00F58C0F /* Vertex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vertex.swift; sourceTree = "<group>"; };
 		B9E4930A20FD906E00F58C0F /* Edge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Edge.swift; sourceTree = "<group>"; };
@@ -94,6 +104,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B95EA6802171FFEA0001C053 /* MaximumSlice */ = {
+			isa = PBXGroup;
+			children = (
+				B95EA6812172000A0001C053 /* MaximumSlice.swift */,
+			);
+			path = MaximumSlice;
+			sourceTree = "<group>";
+		};
 		B9951B2F20FC448C002C3BA5 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +135,11 @@
 		B9951B3A20FC448C002C3BA5 /* algorithm */ = {
 			isa = PBXGroup;
 			children = (
+				B99C03AC2173307300F543D1 /* Fibonacci */,
+				B99C03A92173264F00F543D1 /* Euclidean */,
+				B99C03A621731FDC00F543D1 /* SieveOfEratosthenes */,
+				B99C03A3217307D800F543D1 /* PrimeAndCompositeNumbers */,
+				B95EA6802171FFEA0001C053 /* MaximumSlice */,
 				B9E4930720FD8F9500F58C0F /* Graph */,
 				B9951B6F20FC4592002C3BA5 /* Search */,
 				B9951B6D20FC4592002C3BA5 /* Sort */,
@@ -174,6 +197,38 @@
 				B9951B7020FC4592002C3BA5 /* SearchImplementation.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		B99C03A3217307D800F543D1 /* PrimeAndCompositeNumbers */ = {
+			isa = PBXGroup;
+			children = (
+				B99C03A42173081200F543D1 /* PrimeCompositeNumber.swift */,
+			);
+			path = PrimeAndCompositeNumbers;
+			sourceTree = "<group>";
+		};
+		B99C03A621731FDC00F543D1 /* SieveOfEratosthenes */ = {
+			isa = PBXGroup;
+			children = (
+				B99C03A72173201200F543D1 /* Sieve.swift */,
+			);
+			path = SieveOfEratosthenes;
+			sourceTree = "<group>";
+		};
+		B99C03A92173264F00F543D1 /* Euclidean */ = {
+			isa = PBXGroup;
+			children = (
+				B99C03AA2173265A00F543D1 /* Euclidean.swift */,
+			);
+			path = Euclidean;
+			sourceTree = "<group>";
+		};
+		B99C03AC2173307300F543D1 /* Fibonacci */ = {
+			isa = PBXGroup;
+			children = (
+				B99C03AD2173308D00F543D1 /* FibonacciNumber.swift */,
+			);
+			path = Fibonacci;
 			sourceTree = "<group>";
 		};
 		B9E4930720FD8F9500F58C0F /* Graph */ = {
@@ -319,13 +374,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9E4930F20FD940700F58C0F /* AdjacencyList.swift in Sources */,
+				B99C03AE2173308D00F543D1 /* FibonacciNumber.swift in Sources */,
+				B95EA6822172000A0001C053 /* MaximumSlice.swift in Sources */,
+				B99C03A82173201200F543D1 /* Sieve.swift in Sources */,
 				B9951B3E20FC448C002C3BA5 /* ViewController.swift in Sources */,
 				B9951B7420FC46A0002C3BA5 /* Queue.swift in Sources */,
 				B9951B7120FC4592002C3BA5 /* SortImplementation.swift in Sources */,
 				B9951B6B20FC450D002C3BA5 /* Stack.swift in Sources */,
 				B9E4930920FD8FAF00F58C0F /* Vertex.swift in Sources */,
+				B99C03AB2173265A00F543D1 /* Euclidean.swift in Sources */,
 				B9E492ED20FC675F00F58C0F /* BinarySearchTree.swift in Sources */,
 				B9951B7220FC4592002C3BA5 /* SearchImplementation.swift in Sources */,
+				B99C03A52173081200F543D1 /* PrimeCompositeNumber.swift in Sources */,
 				B9951B3C20FC448C002C3BA5 /* AppDelegate.swift in Sources */,
 				B9E4930D20FD91EC00F58C0F /* Graphable.swift in Sources */,
 				B9E4930B20FD906E00F58C0F /* Edge.swift in Sources */,

@@ -25,7 +25,13 @@ class ViewController: UIViewController {
 //        playWithQueue()
 //        playWithLinkedList()
 //        playWithBinarySearchTree()
-        playWithGraph()
+//        playWithGraph()
+        
+//        maximumSlice()
+//        primeAndCompositeNumbers()
+//        sieve()
+//        euclidean()
+        fibonacciNumbers()
     }
     
     
@@ -93,13 +99,30 @@ class ViewController: UIViewController {
     }
     
     func playWithBinarySearchTree() {
-        let tree1 = BinarySearchTree<Int>(value: 7)
-        tree1.insert(value: 2)
-        tree1.insert(value: 5)
-        tree1.insert(value: 10)
+        let tree1 = BinarySearchTree<Int>(value: 6)
+        tree1.insert(value: 3)
         tree1.insert(value: 9)
-        tree1.insert(value: 1)
+        tree1.insert(value: 2)
+        tree1.insert(value: 4)
+        tree1.insert(value: 8)
+        tree1.insert(value: 10)
+//        let tree1 = BinarySearchTree<Int>(value: 2)
+//        tree1.insert(value: 1)
+//        tree1.insert(value: 3)
+//        tree1.insert(value: 0)
+//        tree1.insert(value: 7)
+//        tree1.insert(value: 9)
+//        tree1.insert(value: 1)
         print("tree1: \(tree1)")
+        print("tree1 level: \(tree1.levelDescription())")
+        
+        var nodesByLevel = tree1.nodesByLevel()
+        var nodeDesc = ""
+        for node in nodesByLevel {
+            nodeDesc += " \(node.value)"
+        }
+        print(nodeDesc)
+        
         tree1.traverseLNR(process: { print($0) })
         tree1.traverseLRN(process: { print($0) })
         tree1.traverseNLR(process: { print($0) })
@@ -203,8 +226,45 @@ class ViewController: UIViewController {
         print(flightsExplored)
         let paths = adjacencyList.depthFirstSearchPaths(from: seattle, to: detroit)
         print(paths)
+    
+    }
+    
+    func maximumSlice() {
+        var array = [3, 2, -6, 4, 0]
+        let maxSliceSum = MaximumSlice.maxSliceSum(&array)
+        print(maxSliceSum)
         
+        var array2 = [-3, -2]
+        let maxSliceSum2 = MaximumSlice.maxSliceSum(&array2)
+        print(maxSliceSum2)
+    }
+    
+    func primeAndCompositeNumbers() {
+        var coinsArray = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+        let reverseCoins = PrimeCompositeNumber.reverseCoins(&coinsArray)
+        print(reverseCoins)
+    }
+    
+    func sieve() {
+        print(SieveOfEratosthenes.sievePrimeNumber(17))
+    }
+    
+    func euclidean() {
+        let a = 15
+        let b = 7
+        let gcd = Euclidean.greatestCommonDivisor(a, b)
+        print(gcd)
         
+        let optimizeGCD = Euclidean.optimizeGCD(a, b, rest: 1)
+        print(optimizeGCD)
+        
+        let lcm = Euclidean.leastCommonMultiple(a, b)
+        print(lcm)
+    }
+    
+    func fibonacciNumbers() {
+        let fib = FibonacciNumber.fibonacciNumbers(10)
+        print(fib)
     }
 }
 

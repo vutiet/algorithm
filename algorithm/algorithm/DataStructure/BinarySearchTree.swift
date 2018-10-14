@@ -50,6 +50,27 @@ class BinarySearchTree<T: Comparable>: CustomStringConvertible {
         return right != nil
     }
     
+    func isSibling(with node: BinarySearchTree) -> Bool {
+        if let selfParent = self.parent, node.isChild(of: selfParent) {
+            return true
+        }
+        return false
+    }
+    
+    func isNephew(of node: BinarySearchTree) -> Bool {
+        if let selfParent = self.parent, selfParent.isSibling(with: node) {
+            return true
+        }
+        return false
+    }
+    
+    func isChild(of node: BinarySearchTree) -> Bool {
+        if let selfParent = self.parent, selfParent.value == node.value {
+            return true
+        }
+        return false
+    }
+    
     func count() -> Int {
         return (left?.count() ?? 0) + 1 + (right?.count() ?? 0)
     }
@@ -204,6 +225,7 @@ class BinarySearchTree<T: Comparable>: CustomStringConvertible {
         right?.traverseNLR(process: process)
     }
     
+    
     public var description: String {
         var s = ""
         if let left = left {
@@ -214,6 +236,53 @@ class BinarySearchTree<T: Comparable>: CustomStringConvertible {
             s += " -> (\(right.description))"
         }
         return s
+    }
+    
+    func levelDescription() -> String {
+        var s = "tree by level: \n"
+        let nodes = nodesByLevel()
+        for i in 0..<nodes.count {
+            let node = nodes[i]
+            print("current node: \(node.value)")
+            if node.isRoot() {
+                s += "(\(node.value))"
+            } else { // index > 0 from here
+                let previousNode = nodes[i-1]
+                if node.isChild(of: previousNode) || node.isNephew(of: previousNode) {
+                    s += "\n(\(node.value))"
+                } else if node.isSibling(with: previousNode) {
+                    s += ", (\(node.value))"
+                } else if let uncleNode = previousNode.parent, node.isNephew(of: uncleNode) {
+                    s += ", (\(node.value))"
+                }
+            }
+            print(s)
+        }
+        return s
+    }
+    
+    func nodesByLevel() -> [BinarySearchTree] {
+        guard isRoot() else {
+            return [BinarySearchTree]()
+        }
+        var queue = [BinarySearchTree]()
+        queue.append(self)
+        let nodesCount = count()
+        var index = 0
+        while index < nodesCount {
+    
+            let node = queue[index]
+            if let left = node.left {
+                queue.append(left)
+            }
+                
+            if let right = node.right {
+                queue.append(right)
+            }
+            
+            index += 1
+        }
+        return queue
     }
 }
 
