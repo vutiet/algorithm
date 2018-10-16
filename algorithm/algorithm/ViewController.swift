@@ -31,7 +31,13 @@ class ViewController: UIViewController {
 //        primeAndCompositeNumbers()
 //        sieve()
 //        euclidean()
-        fibonacciNumbers()
+//        fibonacciNumbers()
+//        caterpillar()
+//        greedy()
+//        iterations()
+//        arraywork()
+        timeComplexity()
+        prefixSums()
     }
     
     
@@ -265,6 +271,81 @@ class ViewController: UIViewController {
     func fibonacciNumbers() {
         let fib = FibonacciNumber.fibonacciNumbers(10)
         print(fib)
+    }
+    
+    func caterpillar() {
+        let array = [6, 2, 7, 4, 1, 3, 6]
+        let sum = 12
+        let check = Caterpillar.checkExistenceOfSequence(in: array, sum: sum)
+        print(check)
+        
+        let triangles = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+        let trianglesCount = Caterpillar.countTriangles(triangles)
+        print(trianglesCount)
+        
+        let distinctArray = [3, 4, 5, 5, 2]
+        let distinctSlicesCount = Caterpillar.countDistinctSlices(0, [0, 0, 0])
+        print(distinctSlicesCount)
+        
+        let absArray = [-5, -3, -1, 0, 3, 6]
+        let absDistinctCount = Caterpillar.absDistinctCount(absArray)
+        print(absDistinctCount)
+    }
+    
+    func greedy() {
+        var ropes = [1, 2, 3, 4, 1, 1, 3]
+        let tieRopes = Greedy.tieRopes(4, &ropes)
+        print(tieRopes)
+        var ropes2 = [2, 1]
+        let tieRopes2 = Greedy.tieRopes(2, &ropes2)
+        print(tieRopes2)
+    }
+    
+    func iterations() {
+        let n1 = 32
+        let count1 = Iterations.binaryGapsCount(n1)
+        print(count1)
+        
+        let n2 = 6
+        let count2 = Iterations.binaryGapsCount(n2)
+        print(count2)
+        
+        let n3 = 529
+        let count3 = Iterations.binaryGapsCount(n3)
+        print(count3)
+        
+        let n4 = 1041
+        let count4 = Iterations.binaryGapsCount(n4)
+        print(count4)
+    }
+    
+    func arraywork() {
+//        let array1 = [3, 8, 9, 7, 6]
+//        let rotateArray1 = ArraysWork.rotationArray(array1, 3)
+        var array1 = [-5, 1000]
+        let rotateArray1 = ArraysWork.rotationArray(&array1, 1)
+        print(rotateArray1)
+        
+        var array2 = [9, 3, 9, 3, 9, 7, 9]
+        let oddOccurence = ArraysWork.checkOddOccurrencesInArray(&array2)
+        print(oddOccurence)
+        
+    }
+    
+    func timeComplexity() {
+        var array1 = [-1000, 1000]
+        let result1 = TimeComplexity.tapeEquilibrium(&array1)
+        print(result1)
+    }
+    
+    func prefixSums() {
+        let array1 = [2, 3, 7, 5, 1, 3, 9]
+        let result1 = PrefixSums.pickMushrooms(array1, k: 4, m: 6)
+        print(result1)
+        
+        let cars = [0, 1, 0, 1, 1]
+        let passingCars = PrefixSums.countPassingCars(cars)
+        print(passingCars)
     }
 }
 
