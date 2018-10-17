@@ -36,8 +36,11 @@ class ViewController: UIViewController {
 //        greedy()
 //        iterations()
 //        arraywork()
-        timeComplexity()
-        prefixSums()
+//        timeComplexity()
+//        prefixSums()
+//        sortExercises()
+//        stackQueueExercises()
+        leaderExercises()
     }
     
     
@@ -346,6 +349,53 @@ class ViewController: UIViewController {
         let cars = [0, 1, 0, 1, 1]
         let passingCars = PrefixSums.countPassingCars(cars)
         print(passingCars)
+    }
+    
+    func sortExercises() {
+        var array1 = [2, 1, 1, 2, 3, 1]
+        let result1 = SortExercise.countDistinctValues(&array1)
+        print(result1)
+        
+        var array2 = [10, 2, 5, 1, 8, 20]
+        let result2 = SortExercise.checkTriangle(&array2)
+        print(result2)
+        
+        var array3 = [-3, 1, 2, -2, 5, 6]
+        let result3 = SortExercise.maxProductOfThree(&array3)
+        print(result3)
+    }
+    
+    func stackQueueExercises() {
+        var brackets = "{[()()]}"
+        let validBrackets = StackQueueExercises.validateBrackets(&brackets)
+        print(validBrackets)
+        
+        var nestString = "(()(())())"
+        let validNestString = StackQueueExercises.validateNesting(&nestString)
+        print(validNestString)
+        
+        var fishSizes = [4, 3, 2, 1, 5]
+        var fishDirections = [0, 1, 0, 0 , 0]
+        let aliveFishes = StackQueueExercises.countAliveFishes(&fishSizes, &fishDirections)
+        print(aliveFishes)
+        
+        var wall = [8, 8, 5, 7, 9, 8, 7, 4, 8]
+        let stones = StackQueueExercises.buildStoneWall(&wall)
+        print(stones)
+    }
+    
+    func leaderExercises() {
+        let array  = [4, 6, 6, 6, 6, 8, 8]
+        let (leaderCount, leaderValue) = Leader.findLeader(array)
+        print("leader: \(leaderValue) ===== count: \(leaderCount)")
+        
+        var equiLeaderArray = [4, 3, 4, 4, 4, 2]
+        let equiLeaders = Leader.findEquiLeaders(&equiLeaderArray)
+        print("number of equi leaders: \(equiLeaders)")
+        
+        let arrayWithLeaders = [3, 4, 3, 2, 3, -1, 3, 3]
+        let leaderIndex = Leader.findLeaderIndex(arrayWithLeaders)
+        print("last index of leader: \(leaderIndex)")
     }
 }
 
